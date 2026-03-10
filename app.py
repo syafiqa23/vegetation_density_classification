@@ -8,7 +8,15 @@ from tensorflow.keras.applications.efficientnet import preprocess_input
 
 import os
 import gdown
+import subprocess
+import sys
 
+
+try:
+    import tensorflow as tf
+except:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "tensorflow-cpu"])
+    import tensorflow as tf
 # ======================
 # CONFIG
 # ======================
