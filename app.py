@@ -11,11 +11,10 @@ import gdown
 import subprocess
 import sys
 
-
 try:
     import tensorflow as tf
-except:
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "tensorflow-cpu"])
+except ModuleNotFoundError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "tensorflow==2.13.0"])
     import tensorflow as tf
 # ======================
 # CONFIG
